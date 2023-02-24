@@ -4,6 +4,7 @@ import { ProductCard } from '@components/product'
 import { Grid, Marquee, Hero } from '@components/ui'
 // import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
+import Script from 'next/script'
 
 export async function getStaticProps({
   preview,
@@ -40,6 +41,11 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
+      <Script
+        src="https://test.buttr.dev/butter.js"
+        strategy="afterInteractive"
+        data-site-id="shkupvztah"
+      />
       <Grid variant="filled">
         {products.slice(0, 3).map((product: any, i: number) => (
           <ProductCard
@@ -54,6 +60,10 @@ export default function Home({
           />
         ))}
       </Grid>
+      <div
+        data-cb-embedded="instagram"
+        data-campaign-id="5b191ff3-7f47-4d1a-87db-9b538bab0d24"
+      ></div>
       <Marquee variant="secondary">
         {products.slice(0, 3).map((product: any, i: number) => (
           <ProductCard key={product.id} product={product} variant="slim" />

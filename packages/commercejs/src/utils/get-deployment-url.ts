@@ -8,5 +8,5 @@ export const getDeploymentUrl = () => {
     return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
   }
   // Assume local development.
-  return 'http://localhost:3000'
+  return 'http://localhost:8080'
 }
