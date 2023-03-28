@@ -62,7 +62,7 @@ export default function Home({
       </Grid>
       <div
         data-cb-embedded="instagram"
-        data-campaign-id="b356ae1e-8174-4eab-a983-ed2d2df73ef3"
+        data-campaign-id="b356ae1e-8174-4eab-a23983-ed2d2df73ef3"
       ></div>
       <Marquee variant="secondary">
         {products.slice(0, 3).map((product: any, i: number) => (
