@@ -42,9 +42,9 @@ export default function Home({
   return (
     <>
       <Script
-        src="https://test.buttr.dev/butter.js"
+        src="https://buttr.dev/butter.js"
         strategy="afterInteractive"
-        data-site-id="shkupvztah"
+        data-site-id="gudhzrvcav"
       />
       <Grid variant="filled">
         {products.slice(0, 3).map((product: any, i: number) => (
@@ -60,10 +60,7 @@ export default function Home({
           />
         ))}
       </Grid>
-      <div
-        data-cb-embedded="instagram"
-        data-campaign-id="b356ae1e-8174-4eab-a23983-ed2d2df73ef3"
-      ></div>
+<div data-cb-embedded="instagram" data-campaign-id="a8111bb0-90f9-4481-abed-cd7014e8ca14"></div>
       <Marquee variant="secondary">
         {products.slice(0, 3).map((product: any, i: number) => (
           <ProductCard key={product.id} product={product} variant="slim" />
