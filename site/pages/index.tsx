@@ -44,7 +44,7 @@ export default function Home({
       <Script
         src="https://buttr.dev/butter.js"
         strategy="afterInteractive"
-        data-site-id="gudhzrvcav"
+        data-site-id="litysesthx"
       />
       <Grid variant="filled">
         {products.slice(0, 3).map((product: any, i: number) => (
