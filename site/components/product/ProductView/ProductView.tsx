@@ -1,18 +1,18 @@
-import cn from 'clsx'
-import Image from 'next/image'
-import s from './ProductView.module.css'
-import { FC } from 'react'
-import type { Product } from '@commerce/types/product'
-import usePrice from '@framework/product/use-price'
-import { WishlistButton } from '@components/wishlist'
-import { ProductSlider, ProductCard } from '@components/product'
-import { Container, Text } from '@components/ui'
-import { SEO } from '@components/common'
-import ProductSidebar from '../ProductSidebar'
-import ProductTag from '../ProductTag'
+import cn from "clsx";
+import Image from "next/image";
+import s from "./ProductView.module.css";
+import { FC } from "react";
+import type { Product } from "@commerce/types/product";
+import usePrice from "@framework/product/use-price";
+import { WishlistButton } from "@components/wishlist";
+import { ProductSlider, ProductCard } from "@components/product";
+import { Container, Text } from "@components/ui";
+import { SEO } from "@components/common";
+import ProductSidebar from "../ProductSidebar";
+import ProductTag from "../ProductTag";
 interface ProductViewProps {
-  product: Product
-  relatedProducts: Product[]
+  product: Product;
+  relatedProducts: Product[];
 }
 
 const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
@@ -20,13 +20,13 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
     amount: product.price.value,
     baseAmount: product.price.retailPrice,
     currencyCode: product.price.currencyCode!,
-  })
+  });
 
   return (
     <>
-      <Container className="max-w-none w-full" clean>
-        <div className={cn(s.root, 'fit')}>
-          <div className={cn(s.main, 'fit')}>
+      <Container className="w-full max-w-none" clean>
+        <div className={cn(s.root, "fit")}>
+          <div className={cn(s.main, "fit")}>
             <ProductTag
               name={product.name}
               price={`${price} ${product.price?.currencyCode}`}
@@ -39,7 +39,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
                     <Image
                       className={s.img}
                       src={image.url!}
-                      alt={image.alt || 'Product Image'}
+                      alt={image.alt || "Product Image"}
                       width={600}
                       height={600}
                       priority={i === 0}
@@ -65,11 +65,15 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
           />
         </div>
         <hr className="mt-7 border-accent-2" />
-        <section className="py-12 px-6 mb-10">
+        <section className="px-6 py-12 mb-10">
           <Text variant="sectionHeading">Related Products</Text>
+          <div
+            data-cb-embedded="instagram"
+            data-campaign-id="mzzapsaidxqm"
+          ></div>
           <div className={s.relatedProductsGrid}>
             {relatedProducts.map((p) => (
-              <div key={p.path} className="bg-accent-0 border border-accent-2">
+              <div key={p.path} className="border bg-accent-0 border-accent-2">
                 <ProductCard
                   noNameTag
                   product={p}
@@ -78,7 +82,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
                   className="animated fadeIn"
                   imgProps={{
                     alt: p.name,
-                    className: 'w-full h-full object-cover',
+                    className: "w-full h-full object-cover",
                   }}
                 />
               </div>
@@ -90,21 +94,21 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
         title={product.name}
         description={product.description}
         openGraph={{
-          type: 'website',
+          type: "website",
           title: product.name,
           description: product.description,
           images: [
             {
               url: product.images[0]?.url!,
-              width: '800',
-              height: '600',
+              width: "800",
+              height: "600",
               alt: product.name,
             },
           ],
         }}
       />
     </>
-  )
-}
+  );
+};
 
-export default ProductView
+export default ProductView;
